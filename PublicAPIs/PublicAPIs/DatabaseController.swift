@@ -34,7 +34,7 @@ class DatabaseController {
                 completion([])
             }
             
-        }.resume()
+            }.resume()
     }
     
     static func fetchDatabases(category: String, completion: @escaping ([Database]) -> Void) {
@@ -63,13 +63,13 @@ class DatabaseController {
             
             do {
                 let topLevelObject = try JSONDecoder().decode(TopLevelObject.self, from: data)
- lnm                 let databases = topLevelObject.entries
+                let databases = topLevelObject.entries
                 completion(databases)
             } catch {
                 print(error)
                 completion([])
             }
-        }.resume()
+            }.resume()
         
     }
 }
